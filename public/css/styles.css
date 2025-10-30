@@ -16,3 +16,10 @@ h1, h2, h3 {
 .dmc-delorean {
   color: #008dc5;
 }
+
+button {
+    background: #0099ff;
+    /* color: white; */
+    padding: 10px 20px;
+    cursor: pointer;
+}
