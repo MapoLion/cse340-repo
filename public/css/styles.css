@@ -22,6 +22,7 @@ button {
     /* color: white; */
     padding: 10px 20px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 
@@ -35,6 +36,7 @@ button {
 .upgrade-item {
   background-color: #008dc5; 
   border: 1px solid;
+  border-color: black;
   display: flex; 
   justify-content: center;
   align-items: center;
