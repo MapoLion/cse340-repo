@@ -6,8 +6,29 @@
 }
 
 body {
-      font-family: Arial, sans-serif; 
+    font-family: Arial, sans-serif; 
+    padding: 20px;
+    margin: 1em;
+    border: 10 px solid #008dc5;
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 10px;
+    background-color: white;
     }
+
+span.siteName {
+    text-decoration: none;
+    float: right;
+    color: black;
+    padding: 10px;
+    font-size: 20px;
+}
+
+div#tools {
+    float: right;
+    padding: 10px;
+    font-size: 20px;
+}
 
 h1, h2, h3 {
   font-family: Georgia, serif;
@@ -25,10 +46,13 @@ button {
     font-weight: bold;
 }
 
+.reviews {
+  float:right;
+}
 
-.upgrades {
+
+.upgrade-box {
   display: grid;
-  float: right;
   grid-template-columns: 1fr 1fr; 
   grid-template-rows: 1fr 1fr; 
 }
