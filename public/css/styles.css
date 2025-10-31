@@ -24,8 +24,10 @@ button {
     cursor: pointer;
 }
 
+
 .upgrades {
   display: grid;
+  float: right;
   grid-template-columns: 1fr 1fr; 
   grid-template-rows: 1fr 1fr; 
 }
