@@ -27,7 +27,7 @@ div#tools {
 section {
     padding: 20px;
     margin: 1em;
-    border: 10 px solid #008dc5;
+    border: 5px solid #008dc5;
     border-spacing: 0;
     border-collapse: separate;
     border-radius: 10px;
@@ -70,14 +70,18 @@ button {
   align-items: center;
 }
 
-/******* Smaller Screen ***************/
-@media(min-width: 768px) {
+/******* Mobile Screen ***************/
+@media(min-width: 660) {
 
+  section {
+    padding: 20px;
+    margin: 1em;
+    border: none;
+}
 
-
-
-
-
+.reviews {
+  float:left;
+}
 
 
 }
