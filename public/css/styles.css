@@ -30,7 +30,7 @@ button {
   grid-template-rows: 1fr 1fr; 
 }
 
-.grid-item {
+.upgrade-item {
   background-color: #008dc5; 
   border: 1px solid;
   display: flex; 
