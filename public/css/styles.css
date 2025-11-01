@@ -80,12 +80,16 @@ button {
   background-color: #008dc5; 
   border: 1px solid;
   border-color: black;
-  display: flex; 
+  display: grid; 
   justify-content: center;
   align-items: center;
 }
 
-/****** Bigger Screen ******/
+.upgrade-item img {
+    margin: 0 auto 5px;
+}
+
+/****** Medium Screen ******/
 @media(min-width: 768px) 
 {
 
@@ -108,9 +112,10 @@ section {
 }
 
 .dmc-delorean {
-  font-size: 25px;
+  font-size: 15px;
   left: 14%;
-  top: 10em;
+  top: 16em;
 }
 
 }
+
