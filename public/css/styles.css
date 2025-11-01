@@ -27,7 +27,7 @@ div#tools {
 section {
     padding: 20px;
     margin: 1em;
-    border: 5px solid #008dc5;
+    border: none;
     border-spacing: 0;
     border-collapse: separate;
     border-radius: 10px;
@@ -38,21 +38,21 @@ h1, h2, h3 {
   font-family: Georgia, serif;
 }
 
+.hero h1 {
+  font-size: 21px;
+}
+
 .hero img {
   display: block;
   margin: auto;
-  width: 50%;
-}
-
-.hero h1 {
-  font-size: 32px;
+  width: 70%;
 }
 
 .dmc-delorean {
+  font-size: 10px; 
+  left: 10%;
+  top: 23em;
   color: #008dc5;
-  font-size: 25px;
-  left: 14%;
-  top: 12em;
   position: absolute;
   background: rgb(255 255 255 / 70%);
 }
@@ -66,7 +66,7 @@ button {
 }
 
 .reviews {
-  float: right;
+  float: left;
 }
 
 
@@ -85,33 +85,32 @@ button {
   align-items: center;
 }
 
-/******* Mobile Screen ***************/
-@media(min-width: 547) {
-
+/****** Bigger Screen ******/
+@media(min-width: 768px) 
+{
 
 .hero h1 {
-  font-size: 21px;
+  font-size: 32px;
 }
 
 section {
     padding: 20px;
     margin: 1em;
-    border: none;
+    border: 5px solid #008dc5;
 }
 
 .hero img {
-  width: 70%;
-}
-
-.dmc-delorean {
-    font-size: 10px; 
-    left: 10%;
-    top: 23em;
+  width: 50%
 }
 
 .reviews {
-  float:left;
+  float: right;
 }
 
+.dmc-delorean {
+  font-size: 25px;
+  left: 14%;
+  top: 10em;
+}
 
 }
