@@ -38,8 +38,23 @@ h1, h2, h3 {
   font-family: Georgia, serif;
 }
 
+.hero img {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+
+.hero h1 {
+  font-size: 32px;
+}
+
 .dmc-delorean {
   color: #008dc5;
+  font-size: 25px;
+  left: 14%;
+  top: 12em;
+  position: absolute;
+  background: rgb(255 255 255 / 70%);
 }
 
 button {
@@ -71,12 +86,27 @@ button {
 }
 
 /******* Mobile Screen ***************/
-@media(min-width: 660) {
+@media(min-width: 547) {
 
-  section {
+
+.hero h1 {
+  font-size: 21px;
+}
+
+section {
     padding: 20px;
     margin: 1em;
     border: none;
+}
+
+.hero img {
+  width: 70%;
+}
+
+.dmc-delorean {
+    font-size: 10px; 
+    left: 10%;
+    top: 23em;
 }
 
 .reviews {

@@ -1,18 +1,23 @@
 <%# HTML %>
 
+<%- include ('.partials/head.ejs') %>
 
 <section>
-    <h1>Welcome to CSE Motors!</h1>
-<img src="/images/vehicles/delorean.jpg" alt="delorean">
-
-    <div class="dmc-delorean">
-        <h2>DMC Delorean</h2>
-        <p>3 Cup holders
-        <br>Superman doors
-        <br>Fuzzy dice!</p>
-        <button>Own Today</button>
-    </div>
-
+    <%- include ('.partials/header.ejs') %>
+    <%- include ('.partials/navigation.ejs') %>
+    <div class = "hero">
+        <h1>Welcome to CSE Motors!</h1>
+        <img src="/images/vehicles/delorean.jpg" alt="delorean">
+        <div class="dmc-delorean">
+            <h2>DMC Delorean</h2>
+            <p>3 Cup holders
+            <br>Superman doors
+            <br>Fuzzy dice!</p>
+            <button>Own Today</button>
+        </div>
+        
+        </div>
+        
     <div class = "part-two">
 
         <div class="reviews">
@@ -57,3 +62,5 @@
         </div>
     </div>
 </section>
+
+<%- include ('.partials/footer.ejs') %>
