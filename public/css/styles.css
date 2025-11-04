@@ -73,16 +73,25 @@ button {
 }
 
 .upgrade-item {
-  background-color: #008dc5; 
-  border: 1px solid;
-  border-color: black;
-  display: grid; 
-  justify-content: center;
-  align-items: center;
+    background-color: #008dc5;
+    border: 1px solid;
+    border-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    flex-direction: column;
+    margin: 20px;
 }
 
 .upgrade-item img {
     margin: 0 auto 5px;
+}
+
+.upgrade-item a {
+    position: absolute;
+    bottom: -25px;
 }
 
 /****** Medium Screen ******/
