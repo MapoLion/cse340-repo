@@ -6,8 +6,4 @@ const baseController = require("../controllers/baseController");
 // Index route
 router.get("/", baseController.buildHome)
 
-//router.get("/", function(req, res){
-//    res.render("index", {title: "Home"})
-//})
-
 module.exports = router;
