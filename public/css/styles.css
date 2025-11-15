@@ -32,11 +32,12 @@ div#tools {
     font-family: Tahoma, sans-serif; 
 }
 
-
 h1, h2, h3 {
   font-family: Georgia, serif;
 }
 
+
+/******* HOME PAGE: DEFAULT/SMALL ***************/
 .hero h1 {
   font-size: 21px;
 }
@@ -95,7 +96,13 @@ button {
     bottom: -25px;
 }
 
-/****** Medium Screen ******/
+/******* CLASSIFICATIONS PAGE: DEFAULT/SMALL ***************/
+ul#inv-display {
+    list-style-type: none;
+    align-items: center;
+}
+
+/******* GLOBAL STYLES: MEDIUM/LARGE ***************/
 @media(min-width: 768px) 
 {
 
@@ -105,6 +112,7 @@ body {
     border: 5px solid #008dc5;
 }
 
+/******HOME PAGE: MEDIUM/LARGE  ******/
 .hero h1 {
   font-size: 32px;
 }
@@ -128,5 +136,12 @@ body {
   top: 18em;
 }
 
+/******CLASSIFICATIONS PAGE: MEDIUM/LARGE ******/
+
+ul#inv-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
 }
 
