@@ -32,7 +32,7 @@ invCont.buildByInventoryId = async function (req, res, next) {
   const carMake = data.inv_make
   const carModel = data.inv_model
   res.render("./inventory/details", {
-    title: carYear + carMake + carModel,
+    title: carYear + ' ' + carMake + ' ' + carModel,
     nav,
     details,
   })
