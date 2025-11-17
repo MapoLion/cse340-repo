@@ -57,7 +57,7 @@ h1, h2, h3 {
   background: rgb(255 255 255 / 70%);
 }
 
-button {
+.own-today {
     background: #0099ff;
     padding: 10px 20px;
     cursor: pointer;
@@ -101,6 +101,32 @@ ul#inv-display {
     list-style-type: none;
     align-items: center;
 }
+
+/******* LOGIN PAGE: DEFAULT/SMALL ***************/
+form {
+    background-color: #008dc5;
+    padding: 1em;
+    border: 5px solid black;
+}
+
+.log-in {
+    padding: 1px 3.2em;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    background-color: #000593;
+    border-radius: 15px;
+} 
+
+.sign-up {
+    color: black;
+    font-weight: bold;
+}
+
+
+
+
+
 
 /******* GLOBAL STYLES: MEDIUM/LARGE ***************/
 @media(min-width: 768px) 

@@ -1,0 +1,25 @@
+<h1><%= title %></h1>
+
+<%- messages() %>
+
+<form action="/login">
+    <label for="email">Email Address:</label> 
+    <br>
+    <input type="email" id="email" name="email" required />
+    
+    <br>
+    <br>
+
+    <label for="password">Password:</label>
+    <br>
+    <input type="password" id="password" name="password" 
+    pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{12,}$"
+    title="Password must be at least 12 characters, include one uppercase letter, one number, and one special character." />
+    
+    <br>
+    <br>
+    <button type="submit" class="log-in">LOG IN</button>
+
+    
+    <p>No account? <a href="/register" class="sign-up">Sign up!</a></p>
+</form>
