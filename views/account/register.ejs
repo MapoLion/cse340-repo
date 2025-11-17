@@ -2,7 +2,21 @@
 
 <%- messages() %>
 
-<form action="/login">
+<form action="/account/register" method="post">
+    <label for="first-name">First Name:</label> 
+    <br>
+    <input type="text" id="first-name" name="account_firstname" required />
+    
+    <br>
+    <br>
+    <label for="last-name">Last Name:</label> 
+    <br>
+    <input type="text" id="last-name" name="account_lastname" required />
+    
+    <br>
+    <br>
+
+
     <label for="email">Email Address:</label> 
     <br>
     <input type="email" id="email" name="account_email" required />
@@ -18,8 +32,6 @@
     
     <br>
     <br>
-    <button type="submit" class="log-in">LOG IN</button>
+    <button type="submit" class="log-in">Register</button>
 
-    
-    <p>No account? <a href="/account/register" class="sign-up">Sign up!</a></p>
 </form>
