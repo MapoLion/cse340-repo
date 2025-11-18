@@ -2,16 +2,24 @@
 
 <%- messages() %>
 
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
 <form action="/account/register" method="post">
     <label for="first-name">First Name:</label> 
     <br>
-    <input type="text" id="first-name" name="account_firstname" required />
+    <input type="text" id="first-name" name="account_firstname" required placeholder="Enter a valid first name">
     
     <br>
     <br>
     <label for="last-name">Last Name:</label> 
     <br>
-    <input type="text" id="last-name" name="account_lastname" required />
+    <input type="text" id="last-name" name="account_lastname" required placeholder="Enter a valid last name">
     
     <br>
     <br>
@@ -19,19 +27,20 @@
 
     <label for="email">Email Address:</label> 
     <br>
-    <input type="email" id="email" name="account_email" required />
+    <input type="email" id="email" name="account_email" required placeholder="Enter a valid email address">
     
     <br>
     <br>
 
     <label for="password">Password:</label>
+    <span>Passwords must be at least 12 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
     <br>
     <input type="password" id="password" name="account_password" 
-    pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{12,}$"
-    title="Password must be at least 12 characters, include one uppercase letter, one number, and one special character." />
+    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
     
     <br>
     <br>
     <button type="submit" class="log-in">Register</button>
 
 </form>
+
