@@ -3,14 +3,14 @@
 <%- messages() %>
 
 <form id="loginForm" action="/account/login" method="post">
-    <label for="email">Email Address:</label> 
+    <label for="accountFirstname">Email Address:</label> 
     <br>
     <input type="text" name="account_email" id="accountFirstname" required>
     
     <br>
     <br>
 
-    <label for="password">Password:</label>
+    <label for="accountPassword">Password:</label>
     <br>
     <input type="password" name="account_password" id="accountPassword"
     pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"

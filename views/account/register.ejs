@@ -11,30 +11,30 @@
 <% } %>
 
 <form action="/account/register" method="post">
-    <label for="first-name">First Name:</label> 
+    <label for="accountFirstname">First Name:</label> 
     <br>
     <input type="text" name="account_firstname" id="accountFirstname" required value="<%= locals.account_firstname %>">
     
     <br>
     <br>
-    <label for="last-name">Last Name:</label> 
+    <label for="accountLastname">Last Name:</label> 
     <br>
     <input type="text" name="account_lastname"  id="accountLastname" required value="<%= locals.account_lastname %>">
     
-    <br>
+    <br>  
     <br>
 
 
-    <label for="email">Email Address:</label> 
+    <label for="accountEmail">Email Address:</label> 
     <br>
     <input type="email" name="account_email" id="accountEmail" required value="<%= locals.account_email %>">
     
     <br>
     <br>
 
-    <label for="password">Password:</label>
+    <label for="accountPassword">Password:</label>
     <br>
-    <input type="password" name="account_password" id="account_password"
+    <input type="password" name="account_password" id="accountPassword"
     pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required
     value="<%= locals.account_password %>">
     <br>
