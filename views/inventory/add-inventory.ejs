@@ -5,7 +5,7 @@
 
 <% if (errors) { %>
 <ul class="message warning">
-   <% errors.array().forEach(error => { %>
+   <% errors.forEach(error => { %>
      <li><%= error.msg %></li>
    <%  }) %>
 </ul>
@@ -24,13 +24,13 @@
 %>
 
   <label for="carMake">Make:</label>
-    <input name="inv_make" id="carMake" type="text" min="3" placeholder="Min of 3 characters" required>
+    <input name="inv_make" id="carMake" type="text" minlength="3" placeholder="Min of 3 characters" required>
   <br>
   <label for="carModel">Model:</label>
-    <input name="inv_model" id="carModel" type="text" min="3" placeholder="Min of 3 characters" required>
+    <input name="inv_model" id="carModel" type="text" minlength="3" placeholder="Min of 3 characters" required>
   <br>
   <label for="carYear">Year:</label>
-    <input name="inv_year" id="carYear" type="number" min="4" placeholder="4-digit year" required>
+    <input name="inv_year" id="carYear" type="number" min="1000" max="9999" placeholder= "4-digit year" required>
   <br>
   <label for="carDescription">Description:</label>
   <br>
