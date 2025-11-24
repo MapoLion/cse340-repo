@@ -21,6 +21,10 @@
   const pool = require('./database/')
   const bodyParser = require("body-parser")
 
+  //Added on Week 5
+  const cookieParser = require("cookie-parser")
+
+
 
 
   /* ***********************
@@ -47,6 +51,12 @@
     next()
   })
 
+// JWT Middleware
+  app.use(cookieParser())
+  app.use(utilities.checkJWTToken)
+
+
+
   /* ***********************
   * View Engine and Templates
   *************************/
@@ -66,7 +76,7 @@
   app.use("/inv", inventoryRoute)
 
   // Account Routes
-  app.use("/account", accountRoute, require("./routes/accountRoute"))
+  app.use("/account", accountRoute)//, require("./routes/accountRoute"))
 
   // File Not Found Route - must be last route in list
   app.use(async (req, res, next) => {
