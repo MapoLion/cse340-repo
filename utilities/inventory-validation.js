@@ -109,5 +109,26 @@ validate.checkInventoryData = async (req, res, next) => {
   next()
 }
 
+/* **************************************
+ * Check Update Data (sticky form)
+ *************************************** */
+validate.checkUpdateData = async (req, res, next) => {
+  const errors = validationResult(req)
+  const inv_id = req.body
+  if (!errors.isEmpty()) {
+    let nav = await utilities.getNav()
+    const classificationSelect = await utilities.buildClassificationList(req.body.classification_id)
+
+    return res.render("./inventory/edit-inventory", {
+      title: "Edit Vehicle",
+      nav,
+      classificationSelect,
+      errors: errors.array(), 
+      inv_id,              
+    })
+  }
+  next()
+}
+
 
 module.exports = validate

@@ -30,4 +30,17 @@ router.post("/add-inventory",
     invValidate.checkInventoryData,
     utilities.handleErrors(invController.addInventory))
 
+router.get("/getInventory/:classification_id", 
+  //utilities.checkAccountType,
+  utilities.handleErrors(invController.getInventoryJSON))
+
+router.get(
+  "/edit/:inv_id",
+  utilities.handleErrors(invController.editInventory)
+)
+
+router.post("/update/", invController.updateInventory)
+
+
+
 module.exports = router

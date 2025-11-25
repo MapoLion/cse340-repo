@@ -1,0 +1,55 @@
+​<% if (title) {%>
+<h1><%= title %></h1>
+<%} else {res.redirect('/')} %>
+<%- messages() %>
+
+<% if (errors) { %>
+<ul class="message warning">
+   <% errors.forEach(error => { %>
+     <li><%= error.msg %></li>
+   <%  }) %>
+</ul>
+<% } %>
+
+ <form id="updateForm" action="/inv/update" method="post">
+  <label for="classificationList">Classification</label>
+  <%- classificationSelect %>
+
+  <label for="carMake">Make:</label>
+    <input name="inv_make" id="carMake" type="text" minlength="3" placeholder="Min of 3 characters" required>
+  <br>
+  <label for="carModel">Model:</label>
+    <input name="inv_model" id="carModel" type="text" minlength="3" placeholder="Min of 3 characters" required>
+  <br>
+  <label for="carYear">Year:</label>
+    <input name="inv_year" id="carYear" type="number" min="1000" max="9999" placeholder= "4-digit year" required>
+  <br>
+  <label for="carDescription">Description:</label>
+  <br>
+  <br>
+    <textarea name="inv_description" id="carDescription" required></textarea>
+  <br>
+  <label for="carImage">Image path:</label>
+    <input name="inv_image" id="carImage" type="text" value="/images/vehicles/no-image.png" required>
+  <br>
+  <label for="carThumbnail">Thumbnail path:</label>
+    <input name="inv_thumbnail" id="carThumbnail" type="text" value="/images/vehicles/no-image-tn.png" required>
+  <br>
+  <label for="carPrice">Price:</label>
+    <input name="inv_price" id="carPrice" type="number" step="0.01" min="1" placeholder="decimal or integer numbers only" required>
+  <br>
+  <label for="carMiles">Miles:</label>
+    <input name="inv_miles" id="carMiles" type="number" min="0" placeholder="digits only" required>
+  <br>
+  <label for="carColor">Color:</label>
+    <input name="inv_color" id="carColor" type="text" required>
+  <br>
+  <button type="submit" disabled>Update Vehicle</button>
+
+  <input type="hidden" name="inv_id"
+<% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+<% } %>>
+
+</form>
+
+<script src="../../js/inv-update.js"></script>
