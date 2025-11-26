@@ -36,6 +36,32 @@ h1, h2, h3 {
   font-family: Georgia, serif;
 }
 
+nav {
+  background-color: #2f3541;
+  margin: 1em;
+  padding: 1px;
+  color: white;
+}
+
+nav ul {
+  justify-content: space-evenly;
+  list-style-type: none;
+    }
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+nav a:hover {
+    background-color: white;
+    color: #2f3541;
+}
 
 /******* HOME PAGE: DEFAULT/SMALL ***************/
 .hero h1 {
@@ -51,7 +77,7 @@ h1, h2, h3 {
 .dmc-delorean {
   font-size: 10px; 
   left: 10%;
-  top: 30em;
+  top: 45em;
   color: #008dc5;
   position: absolute;
   background: rgb(255 255 255 / 70%);
@@ -138,6 +164,18 @@ body {
     border: 5px solid #008dc5;
 }
 
+nav {
+  margin: 2em;
+  padding: 5px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav a {
+  padding: 0em;
+}
 /******HOME PAGE: MEDIUM/LARGE  ******/
 .hero h1 {
   font-size: 32px;
