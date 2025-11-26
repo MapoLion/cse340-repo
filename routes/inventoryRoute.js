@@ -34,12 +34,24 @@ router.get("/getInventory/:classification_id",
   //utilities.checkAccountType,
   utilities.handleErrors(invController.getInventoryJSON))
 
+  
+// Update Inventory
 router.get(
   "/edit/:inv_id",
-  utilities.handleErrors(invController.editInventory)
+  utilities.handleErrors(invController.buildEditInventory)
 )
+router.post("/update/", invController.editInventory)
 
-router.post("/update/", invController.updateInventory)
+
+// Delete Inventory
+router.get(
+  "/delete/:inv_id",
+  utilities.handleErrors(invController.buildDeleteInventory)
+)
+router.post(
+  "/delete",
+  utilities.handleErrors(invController.deleteInventory)
+)
 
 
 
