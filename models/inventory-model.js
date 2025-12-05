@@ -65,27 +65,26 @@ async function addClassification(classification_name) {
  *  create new vehicle
  * ************************** */
 async function addInventory(
-  make, model, year, description, image, thumbnail, price, miles, color, classification_id
+  make, model, year, description, image, thumbnail, price, miles, color, classification_id, inv_sold = false
 ) {
   try {
     const sql = `
       INSERT INTO inventory 
       (inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail,
-       inv_price, inv_miles, inv_color, classification_id)
-      VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
+      inv_price, inv_miles, inv_color, classification_id, inv_sold)
+      VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)
       RETURNING *;
-    `
+    `;
     return await pool.query(sql, [
-      make, model, year, description, image, thumbnail, price, miles, color, classification_id
-    ])
+      make, model, year, description, image, thumbnail, price, miles, color, classification_id, inv_sold
+    ]);
   } catch (error) {
-    console.error("Error inserting inventory:", error)
-    return null
+    console.error("Error inserting inventory:", error);
+    return null;
   }
 }
-
   /* *************************** 
- *  create new vehicle
+ *  Edit Vehicle
  * ************************** */
 async function editInventory(
   inv_make,
@@ -98,16 +97,19 @@ async function editInventory(
   inv_miles,
   inv_color,
   classification_id,
+  inv_sold,
   inv_id
 ) {
   try {
     const sql = `
       UPDATE public.inventory 
-      SET inv_make = $1, inv_model = $2, inv_description = $3, inv_image = $4, inv_thumbnail = $5, 
-      inv_price = $6, inv_year = $7, inv_miles = $8, inv_color = $9, classification_id = $10 
-      WHERE inv_id = $11 
+      SET inv_make = $1, inv_model = $2, inv_description = $3, inv_image = $4, 
+          inv_thumbnail = $5, inv_price = $6, inv_year = $7, inv_miles = $8, 
+          inv_color = $9, classification_id = $10, inv_sold = $11
+      WHERE inv_id = $12 
       RETURNING *;
-    `
+    `;
+
     const data = await pool.query(sql, [
       inv_make,
       inv_model,
@@ -119,11 +121,13 @@ async function editInventory(
       inv_miles,
       inv_color,
       classification_id,
+      inv_sold,
       inv_id
- ])
-    return data.rows[0]
+    ]);
+
+    return data.rows[0];
   } catch (error) {
-    console.error("model error: " + error)
+    console.error("model error: " + error);
   }
 }
 
@@ -140,6 +144,26 @@ async function editInventory(
   }
 }
 
+/* ***************************
+ *  Mark Vehicle as Sold
+ * ************************** */
+
+async function markAsSold(inv_id) {
+  try {
+    const sql = `
+      UPDATE inventory
+      SET inv_sold = true
+      WHERE inv_id = $1
+      RETURNING *;
+    `;
+    const result = await pool.query(sql, [inv_id]);
+    return result.rows[0];
+  } catch (error) {
+    console.error("markAsSold error: " + error);
+    return null;
+  }
+}
+
 
 module.exports = {
   getClassifications, 
@@ -149,6 +173,7 @@ module.exports = {
   addInventory,
   editInventory,
   deleteInventory,
+  markAsSold
 };
 
 

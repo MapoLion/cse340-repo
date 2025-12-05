@@ -25,6 +25,7 @@
 		inv_miles integer NOT NULL,
 		inv_color character varying NOT NULL,
 		classification_id integer NOT NULL,
+		inv_sold boolean NOT NULL DEFAULT false,
 		CONSTRAINT inventory_pkey PRIMARY KEY (inv_id)
 	);
 
@@ -67,7 +68,8 @@
 		inv_price,
 		inv_miles,
 		inv_color,
-		classification_id
+		classification_id,
+		inv_sold
 	)
 	VALUES   (
 		'Chevy',
@@ -79,7 +81,8 @@
 		25000,
 		101222,
 		'Silver',
-		2
+		2,
+		false
 	), (
 		'Batmobile',
 		'Custom',
@@ -90,7 +93,8 @@
 		65000,
 		29887,
 		'Black',
-		1
+		1,
+		false
 	), (
 		'FBI',
 		'Surveillance Van',
@@ -101,7 +105,8 @@
 		20000,
 		19851,
 		'Brown',
-		1
+		1,
+		false
 	), (
 		'Dog ',
 		'Car',
@@ -112,7 +117,8 @@
 		35000,
 		71632,
 		'White',
-		1
+		1,
+		false
 	), (
 		'Jeep',
 		'Wrangler',
@@ -123,7 +129,8 @@
 		28045,
 		41205,
 		'Yellow',
-		3
+		3,
+		false
 	), (
 		'Lamborghini',
 		'Adventador',
@@ -134,7 +141,8 @@
 		417650,
 		71003,
 		'Blue',
-		2
+		2,
+		false
 	), (
 		'Aerocar International',
 		'Aerocar',
@@ -145,7 +153,8 @@
 		700000,
 		18956,
 		'Red',
-		1
+		1,
+		false
 	), (
 		'Monster',
 		'Truck',
@@ -156,7 +165,8 @@
 		150000,
 		3998,
 		'purple',
-		1
+		1,
+		false
 	), (
 		'Cadillac',
 		'Escalade',
@@ -167,7 +177,8 @@
 		75195,
 		41958,
 		'Black',
-		4
+		4,
+		false
 	), (
 		'GM',
 		'Hummer',
@@ -178,7 +189,8 @@
 		58800,
 		56564,
 		'Yellow',
-		4
+		4,
+		false
 	), (
 		'Mechanic',
 		'Special',
@@ -189,7 +201,8 @@
 		100,
 		200125,
 		'Rust',
-		5
+		5,
+		false
 	), (
 		'Ford',
 		'Model T',
@@ -200,7 +213,8 @@
 		30000,
 		26357,
 		'Black',
-		5
+		5,
+		false
 	), (
 		'Mystery',
 		'Machine',
@@ -211,7 +225,8 @@
 		10000,
 		128564,
 		'Green',
-		1
+		1,
+		false
 	),
 	(
 		'Spartan',
@@ -223,7 +238,8 @@
 		50000,
 		38522,
 		'Red',
-		4
+		4,
+		false
 	), (
 		'Ford',
 		'Crown Victoria',
@@ -235,6 +251,7 @@
 		108247,
 		'White',
 		5
+		false
 	);
 		
 

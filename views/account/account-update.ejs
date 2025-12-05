@@ -10,7 +10,7 @@
  </ul>
 <% } %>
 
-<form action="/account/update" method="post">
+<form class="blue-form" action="/account/update" method="post">
     <label for="accountFirstname">First Name:</label> 
     <br>
     <input type="text" name="account_firstname" id="accountFirstname" required value="<%= locals.accountData.account_firstname %>">
@@ -33,6 +33,9 @@
     <br>
     <button type="submit" class="update-account">Update Account</button>
 </form>
+
+
+
 <h3>Update Password</h3>
 
 <form action="/account/update-password" method="post">

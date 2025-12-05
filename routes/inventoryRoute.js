@@ -66,4 +66,16 @@ router.post("/delete",utilities.handleErrors(
   accountAuthorize.checkAccountType,
   invController.deleteInventory))
 
+//Checkout
+router.get(
+  "/checkout/:inv_id",
+  utilities.checkLogin, 
+  invController.buildCheckout
+)
+
+//Confirm Purchase
+router.post("/purchase", 
+  utilities.checkLogin, 
+  utilities.handleErrors(invController.purchaseVehicle))
+
 module.exports = router

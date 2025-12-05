@@ -1,0 +1,26 @@
+​<% if (title) {%>
+<h1><%= title %></h1>
+<%} else {res.redirect('/')} %>
+<%- messages() %>
+
+<% if (errors) { %>
+<ul class="message warning">
+   <% errors.forEach(error => { %>
+     <li><%= error.msg %></li>
+   <%  }) %>
+</ul>
+<% } %>
+
+<p>Is this the product you want to purchase?</p>
+
+<form action="/inv/purchase" method="post" class="checkout-form">
+
+    <input type="hidden" name="inv_id" value="<%= invData.inv_id %>">
+
+        <img src="<%= invData.inv_image %>" alt="<%= invData.inv_make %> <%= invData.inv_model %>" class="checkout-image">
+
+        <h3><%= invData.inv_year %> <%= invData.inv_make %> <%= invData.inv_model %></h3>
+        <p><strong>Price:</strong> $<%= new Intl.NumberFormat('en-US').format(invData.inv_price) %></p>
+    
+    <button type="submit" class="confirm-purchase">Confirm Purchase</button>
+</form>

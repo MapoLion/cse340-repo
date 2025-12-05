@@ -37,6 +37,8 @@ invCont.buildByInventoryId = async function (req, res, next) {
     title: carYear + ' ' + carMake + ' ' + carModel,
     nav,
     details,
+    inv_id: data.inv_id, 
+    inv_sold: data.inv_sold
   })
 }
 
@@ -317,5 +319,53 @@ invCont.deleteInventory = async function (req, res, next) {
     })
   }
 }
+
+/* ***************************
+ *  Build Checkout View
+ * ************************** */
+invCont.buildCheckout = async function (req, res, next) {
+  const inv_id = parseInt(req.params.inv_id)
+  let nav = await utilities.getNav()
+
+  const invData = await invModel.getCarByInventoryId(inv_id)
+
+  if (!invData) {
+    req.flash("notice", "Vehicle not found.")
+    return res.redirect("/inv/")
+  }
+
+
+  if (invData.inv_sold) {
+    req.flash("notice", "This vehicle is already sold.")
+    return res.redirect("/inv/")
+  }
+
+  const itemName = `${invData.inv_make} ${invData.inv_model}`
+  res.render("inventory/checkout", {
+    title: "Purchase " + itemName,
+    nav,
+    errors: null,
+    invData
+  })
+}
+
+/* ***************************
+ *  Process Purchase
+ * ************************** */
+invCont.purchaseVehicle = async function (req, res, next) {
+  const inv_id = parseInt(req.body.inv_id)
+  let nav = await utilities.getNav()
+
+  const result = await invModel.markAsSold(inv_id)
+
+  if (result) {
+    req.flash("notice", "Purchase completed! Vehicle marked as sold.")
+     return res.redirect(`/inv/detail/${inv_id}`)
+  } else {
+    req.flash("notice", "Unable to complete the purchase.")
+    res.redirect(`/inv/checkout/${inv_id}`)
+  }
+}
+
 
 module.exports = invCont
